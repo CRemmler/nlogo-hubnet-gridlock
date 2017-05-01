@@ -42,7 +42,6 @@ jQuery(document).ready(function() {
 
   // student repaints most recent changes to world
   socket.on("send update", function(data) {
-    //console.log("get update ", data.turtles);
     universe.applyUpdate({turtles: data.turtles, patches: data.patches});
     universe.repaint();
   });  

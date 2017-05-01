@@ -71,7 +71,6 @@ Interface = (function() {
   }
 
   function showItems(min, max) {
-    console.log(min);
     $(".netlogo-widget").addClass("hidden");
     $(".netlogo-model-title").removeClass("hidden");
     for (var i=min; i<=max; i++) {

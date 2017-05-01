@@ -60465,8 +60465,7 @@ ask one-of intersections with [user-id = -1]
   ask patch-at -1 1
   [
     set plabel-color black
-    ;;set plabel current-id
-    set plabel ":)" ;; CR: current-id is socket-id which is too long for a plabel
+    set plabel current-id
   ]
   hubnet-send current-id "Located At:" (word "(" my-column "," my-row ")")
 ]
@@ -60510,18 +60509,17 @@ end
 
 to user-click
 end
-
 ; Copyright 1999 Uri Wilensky and Walter Stroup.
 ; See Info tab for full copyright and license.
 @#$#@#$#@
 GRAPHICS-WINDOW
-283
-96
-661
-475
+290
+13
+783
+507
 -1
 -1
-10.0
+13.11
 1
 10
 1
@@ -60542,20 +60540,20 @@ ticks
 30.0
 
 TEXTBOX
-7
-411
-185
-453
-This chooser determines\nwhich plot is drawn.
+14
+460
+274
+488
+This chooser determines which plot is drawn.
 11
 0.0
 0
 
 BUTTON
-94
-237
-176
-270
+108
+18
+175
+70
 login
 listen-clients
 T
@@ -60569,10 +60567,10 @@ NIL
 1
 
 PLOT
-565
-500
-844
-689
+917
+325
+1197
+655
 Average Wait Time of Cars
 Time
 Average Wait
@@ -60584,13 +60582,13 @@ true
 false
 "" ""
 PENS
-"default" 1.0 0 -1893860 true "" "hide-or-show-pen  \"Average Wait Time of Cars\" \nplot mean [wait-time] of turtles"
+"default" 1.0 0 -1893860 true "" "hide-or-show-pen  \"Average Wait Time of Cars\"\nplot mean [wait-time] of turtles"
 
 PLOT
-283
-500
-562
-689
+915
+13
+1195
+311
 Average Speed of Cars
 Time
 Average Speed
@@ -60602,13 +60600,13 @@ true
 false
 "set-plot-y-range 0 speed-limit" ""
 PENS
-"default" 1.0 0 -1893860 true "" "hide-or-show-pen \"Average Speed of Cars\" \nplot  mean [speed] of turtles"
+"default" 1.0 0 -1893860 true "" "hide-or-show-pen \"Average Speed of Cars\"\nplot  mean [speed] of turtles"
 
 BUTTON
-288
-60
-406
-93
+1207
+64
+1326
+101
 Reset Instructions
 setup-quick-start
 NIL
@@ -60622,10 +60620,10 @@ NIL
 1
 
 BUTTON
-574
-60
-658
-93
+1457
+65
+1600
+99
 NEXT >>>
 view-next
 NIL
@@ -60639,10 +60637,10 @@ NIL
 1
 
 BUTTON
-497
-60
-575
-93
+1333
+65
+1452
+99
 <<< PREV
 view-prev
 NIL
@@ -60656,10 +60654,10 @@ NIL
 1
 
 MONITOR
-288
-10
-658
-55
+1205
+14
+1599
+59
 Quick Start Instructions- More in Info Window
 quick-start
 0
@@ -60667,10 +60665,10 @@ quick-start
 11
 
 SLIDER
-142
-41
+152
+112
 281
-74
+145
 grid-size-y
 grid-size-y
 1
@@ -60682,10 +60680,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-1
-41
-139
-74
+9
+113
+147
+146
 grid-size-x
 grid-size-x
 1
@@ -60697,10 +60695,10 @@ NIL
 HORIZONTAL
 
 SWITCH
-98
-113
-188
-146
+103
+589
+193
+622
 auto?
 auto?
 1
@@ -60708,10 +60706,10 @@ auto?
 -1000
 
 SWITCH
-190
-113
-280
-146
+194
+589
+284
+622
 crash?
 crash?
 1
@@ -60719,10 +60717,10 @@ crash?
 -1000
 
 SWITCH
-1
-113
-96
-146
+5
+589
+100
+622
 power?
 power?
 0
@@ -60730,10 +60728,10 @@ power?
 -1000
 
 SLIDER
-1
-77
-280
-110
+9
+73
+283
+106
 number
 number
 0
@@ -60745,10 +60743,10 @@ cars
 HORIZONTAL
 
 PLOT
-1
-500
-280
-689
+4
+153
+284
+457
 Stopped Cars
 Time
 Stopped Cars
@@ -60764,9 +60762,9 @@ PENS
 
 BUTTON
 177
-237
-259
-270
+18
+282
+71
 NIL
 go
 T
@@ -60780,10 +60778,10 @@ NIL
 1
 
 SLIDER
-1
-149
-153
-182
+5
+625
+157
+658
 simulation-speed
 simulation-speed
 0
@@ -60795,10 +60793,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-155
-149
-280
-182
+159
+625
+284
+658
 speed-limit
 speed-limit
 0.1
@@ -60810,10 +60808,10 @@ NIL
 HORIZONTAL
 
 BUTTON
-11
-237
-93
-270
+8
+18
+106
+68
 NIL
 setup
 NIL
@@ -60827,10 +60825,10 @@ NIL
 1
 
 MONITOR
-175
-185
-280
-230
+184
+540
+282
+585
 Current Phase
 phase
 3
@@ -60838,35 +60836,35 @@ phase
 11
 
 SLIDER
-1
-201
-173
-234
+5
+545
+180
+578
 ticks-per-cycle
 ticks-per-cycle
 1
-100
-20.0
+50
+14.0
 1
 1
 NIL
 HORIZONTAL
 
 CHOOSER
-6
-450
-176
-495
+7
+492
+180
+537
 plots-to-display
 plots-to-display
 "No plots" "Stopped Cars" "Average Speed of Cars" "Average Wait Time of Cars" "All three plots"
 4
 
 BUTTON
-182
-458
-274
-491
+183
+493
+282
+536
 Refresh Plots
 update-plots
 NIL

@@ -162,7 +162,9 @@ io.on('connection', function(socket){
 		var myRoom = data.roomName;
 		if (roomData[myRoom]) {
 			socket.to(myRoom+"-teacher").emit("display interface", {userType: "disconnected"});
-			io.sockets.sockets[roomData[myRoom].userIdDict["teacher"]].disconnect();			
+			if (io.sockets.sockets[roomData[myRoom].userIdDict["teacher"]]) {
+				io.sockets.sockets[roomData[myRoom].userIdDict["teacher"]].disconnect();
+			}			
 		}
 	});
 	
@@ -174,7 +176,6 @@ io.on('connection', function(socket){
 		var myUserId = socket.id;
 		if (socket.myUserType === "teacher") {
 			clearRoom(myRoom);
-			delete roomData[myRoom];
 			disableTimer();
 		} else {
 			if (roomData[myRoom] != undefined) {
@@ -216,6 +217,7 @@ function clearRoom(roomName) {
 			}
 		}
 	}
+	delete roomData[myRoom];
 }
 
 function getRoomData() {

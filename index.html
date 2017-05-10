@@ -57807,7 +57807,7 @@ into the sorting code and caused a 25% performance hit in BZ Benchmark. --JAB (4
       for (k = 0, len = updates.length; k < len; k++) {
         u = updates[k];
         if (socket) {
-          //console.log("from NLW", modelUpdate[k].turtles);
+          //console.log("from NLW", modelUpdate[k].patches);
           socket.emit("update", {turtles: modelUpdate[k].turtles, patches: modelUpdate[k].patches}); 
         }
         universe = this;
@@ -60461,11 +60461,14 @@ ifelse any? intersections with [user-id = -1]
 ;; pick a random intersection that hasn't been taken yet
 ask one-of intersections with [user-id = -1]
 [
+  let my-intersections-column my-column
+  let my-intersections-row my-row
   set user-id current-id
-  ask patch-at -1 1
+  ask patch-at -2 2
   [
     set plabel-color black
-    set plabel current-id
+    ;;set plabel current-id
+    set plabel (word "(" my-intersections-column "," my-intersections-row ")")
   ]
   hubnet-send current-id "Located At:" (word "(" my-column "," my-row ")")
 ]
